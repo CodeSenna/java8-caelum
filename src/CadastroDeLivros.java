@@ -1,6 +1,6 @@
 public class CadastroDeLivros {
 
-    public static void main() {
+    public static void main(String[] args) {
 
         Autor autor = new Autor();
         autor.nome = "Rodrigo Turini";
@@ -29,7 +29,7 @@ public class CadastroDeLivros {
 
         outroLivro.autor = outroAutor;
         outroLivro.mostrarDetalhes();
-
+        
 
     }
 }
