@@ -1,35 +1,48 @@
 public class CadastroDeLivros {
 
     public static void main(String[] args) {
+        Autor autorRodrigo = criarAutor(
+                "Rodrigo Turini",
+                "rodrigo.turini@caelum.com",
+                "123.456.789.10");
 
+        Livro livroJava8 = criarLivro(
+                "Java 8 Prático",
+                "Novos recursos da linguagem",
+                59.90,
+                "978-85-66250-46-6",
+                autorRodrigo);
+        livroJava8.mostrarDetalhes();
+
+        Autor autorPaulo = criarAutor(
+                "Paulo Silveira",
+                "paulo.silveira@caelum.com",
+                "123.456.789.10");
+
+        Livro livroLogica = criarLivro(
+                "Lógica de Programação",
+                "Crie seus primeiros programas",
+                59.90,
+                "978-85-66250-22-0",
+                autorPaulo);
+        livroLogica.mostrarDetalhes();
+    }
+
+    private static Autor criarAutor(String nome, String email, String cpf) {
         Autor autor = new Autor();
-        autor.nome = "Rodrigo Turini";
-        autor.email = "rodrigo.turini@caelum.com";
-        autor.cpf = "123.456.789.10";
+        autor.nome = nome;
+        autor.email = email;
+        autor.cpf = cpf;
+        return autor;
+    }
 
+    private static Livro criarLivro(String nome, String descricao, double valor, String isbn, Autor autor) {
         Livro livro = new Livro();
-        livro.nome = "Java 8 Prático";
-        livro.descricao = "Novos recursos da linguagem";
-        livro.valor = 59.90;
-        livro.isbn = "978-85-66250-46-6";
-
+        livro.nome = nome;
+        livro.descricao = descricao;
+        livro.valor = valor;
+        livro.isbn = isbn;
         livro.autor = autor;
-        livro.mostrarDetalhes();
-
-        Autor outroAutor = new Autor();
-        outroAutor.nome = "Paulo Silveria";
-        outroAutor.email = "paulo.silveira@caelum.com";
-        outroAutor.cpf = "123.456.789.10";
-
-        Livro outroLivro = new Livro();
-        outroLivro.nome = "Lógica de Programação";
-        outroLivro.descricao = "Crie seus primeiros programas";
-        outroLivro.valor = 59.90;
-        outroLivro.isbn = "978-85-66250-22-0";
-
-        outroLivro.autor = outroAutor;
-        outroLivro.mostrarDetalhes();
-        
-
+        return livro;
     }
 }
